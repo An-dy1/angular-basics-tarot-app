@@ -3,8 +3,28 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'tarot-app';
+  title = 'My Tarot';
+
+  cups = {
+    name: 'page of cups',
+    selected: false,
+  };
+
+  wands = {
+    name: 'page of wands',
+    selected: false,
+  };
+
+  swords = {
+    name: 'page of swords',
+    selected: false,
+  };
+
+  pentacles = {
+    name: 'page of pentacles',
+    selected: false,
+  };
 }
