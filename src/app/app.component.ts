@@ -27,4 +27,9 @@ export class AppComponent {
     name: 'page of pentacles',
     selected: false,
   };
+
+  selectCard(event: Event) {
+    this.pentacles.selected = true;
+    console.log(event);
+  }
 }

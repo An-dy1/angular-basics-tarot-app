@@ -1,3 +1,22 @@
+/**
+* Titles
+*/
+@font-face {
+  font-family: 'IM_Fell_English';
+  src: local('IM_Fell_English'),
+    url(../assets/fonts/IM_Fell_English_SC/IMFellEnglishSC-Regular.ttf)
+      format('truetype');
+}
+
+/**
+* Regular text
+*/
+@font-face {
+  font-family: 'Slabo';
+  src: local('Slabo'),
+    url(../assets/fonts/Slabo_27px/Slabo27px-Regular.ttf) format('truetype');
+}
+
 #tarot-container {
   display: flex;
   flex-direction: row;
@@ -6,4 +25,28 @@
 .card {
   flex: 1 1 0;
   width: 0;
+}
+
+h1 {
+  font-family: 'IM_Fell_English';
+}
+
+button {
+  /* round the corners */
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  font-family: 'Slabo';
+}
+
+button:focus {
+  outline: none;
+  border: 1px solid #a827e3;
+  box-shadow: 0px 0px 14px #d894f7;
+  -moz-box-shadow: 0px 0px 14px #d894f7;
+  -webkit-box-shadow: 0px 0px 14px #d894f7;
+}
+
+body {
+  background-color: antiquewhite;
 }

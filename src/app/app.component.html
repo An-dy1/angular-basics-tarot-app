@@ -1,23 +1,28 @@
-<h1>{{ title }}</h1>
+<body>
+  <h1>{{ title }}</h1>
 
-<div id="tarot-container">
-  <div class="card">
-    <img src="../assets/Pents11.png" />
-    <button>Pick me</button>
-  </div>
+  <div id="tarot-container">
+    <div id="pentacles" class="card">
+      <img src="../assets/Pents11.png" />
+      <button (click)="selectCard($event)">Pick me</button>
+    </div>
 
-  <div class="card">
-    <img src="../assets/Cups11.jpeg" />
-    <button>Pick me</button>
-  </div>
+    <div id="cups" class="card">
+      <img src="../assets/Cups11.jpeg" />
+      <button (click)="selectCard($event)">Pick me</button>
+    </div>
 
-  <div class="card">
-    <img src="../assets/wands.png" />
-    <button>Pick me</button>
-  </div>
+    <div id="wands" class="card">
+      <img src="../assets/wands.png" />
+      <button (click)="selectCard($event)">Pick me</button>
+    </div>
 
-  <div class="card">
-    <img src="../assets/swords.png" />
-    <button>Pick me</button>
+    <div id="swords" class="card">
+      <img src="../assets/swords.png" />
+      <!-- <button [disabled]="swords.selected" (click)="selectCard($event)">
+        Pick me
+      </button> -->
+      <button (click)="selectCard($event)">Pick me</button>
+    </div>
   </div>
-</div>
+</body>
