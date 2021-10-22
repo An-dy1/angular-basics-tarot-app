@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  selectedIndex = -1;
+
   title = 'My Tarot';
 
   cups = {
@@ -28,8 +30,15 @@ export class AppComponent {
     selected: false,
   };
 
-  selectCard(event: Event) {
-    this.pentacles.selected = true;
-    console.log(event);
+  selectCard(index: number) {
+    this.selectedIndex = index;
+  }
+
+  isSelected(index: number) {
+    return this.selectedIndex === index;
+  }
+
+  isDisabled(index: number) {
+    return this.selectedIndex !== -1 && this.selectedIndex !== index;
   }
 }
