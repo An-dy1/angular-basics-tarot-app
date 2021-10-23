@@ -10,34 +10,76 @@ export class AppComponent {
 
   title = 'My Tarot';
 
-  cups = {
-    name: 'page of cups',
-    selected: false,
-  };
+  buttonText = 'Pick me';
 
-  wands = {
-    name: 'page of wands',
-    selected: false,
-  };
+  cards = [
+    {
+      title: 'Cups',
+      name: 'page of cups',
+      selected: false,
+      buttonText: 'vote',
+    },
+    {
+      title: 'Wands',
+      name: 'page of wands',
+      selected: false,
+      buttonText: 'vote',
+    },
+    {
+      title: 'Swords',
+      name: 'page of swords',
+      selected: false,
+      buttonText: 'vote',
+    },
+    {
+      title: 'Pentacles',
+      name: 'page of pentacles',
+      selected: false,
+      buttonText: 'vote',
+    },
+  ];
 
-  swords = {
-    name: 'page of swords',
-    selected: false,
-  };
+  // cups = {
+  //   name: 'page of cups',
+  //   selected: false,
+  //   buttonText: 'vote',
+  // };
 
-  pentacles = {
-    name: 'page of pentacles',
-    selected: false,
-  };
+  // wands = {
+  //   name: 'page of wands',
+  //   selected: false,
+  // };
 
+  // swords = {
+  //   name: 'page of swords',
+  //   selected: false,
+  // };
+
+  // pentacles = {
+  //   name: 'page of pentacles',
+  //   selected: false,
+  // };
+
+  // if selected index is equal to this card's index, then return selected index to -1
+  // else set it equal to current card's index
   selectCard(index: number) {
-    this.selectedIndex = index;
+    if (this.selectedIndex === index) {
+      this.selectedIndex = -1;
+      this.cards[index].buttonText = 'vote';
+    } else {
+      this.selectedIndex = index;
+      this.cards[index].buttonText = 'unvote';
+    }
   }
 
-  isSelected(index: number) {
+  // returns true if selected card index is equal to this card's index
+  // hidden = !true if that condition is met
+  // hidden = !false if the condition is not met
+  titleIsSelected(index: number) {
     return this.selectedIndex === index;
   }
 
+  // if selected index is set to a card (not starting value -1) and the selected index is not equal to current card's index, then return true, disabling the card
   isDisabled(index: number) {
     return this.selectedIndex !== -1 && this.selectedIndex !== index;
   }
