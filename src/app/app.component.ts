@@ -81,6 +81,10 @@ export class AppComponent {
 
   // if selected index is set to a card (not starting value -1) and the selected index is not equal to current card's index, then return true, disabling the card
   isDisabled(index: number) {
-    return this.selectedIndex !== -1 && this.selectedIndex !== index;
+    return this.anySelected() && this.selectedIndex !== index;
+  }
+
+  anySelected() {
+    return this.selectedIndex !== -1;
   }
 }
